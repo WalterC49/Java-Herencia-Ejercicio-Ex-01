@@ -22,6 +22,9 @@ quiera alquilar y mostrarle el precio final de su alquiler.
 */
 package ejercicio_herencia_ex_01;
 
+import ejercicio_herencia_ex_01.servicios.PuertoServicio;
+import ejercicio_herencia_ex_01.servicios.Servicio;
+
 /**
  *
  * @author Walter
@@ -32,7 +35,8 @@ public class Ejercicio_Herencia_Ex_01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("Este programa sirve para calcular el alquiler de barcos en un puerto.");
+        Servicio.Menu(PuertoServicio.AbrirPuerto());
     }
     
 }
