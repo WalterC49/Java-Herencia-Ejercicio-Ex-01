@@ -24,6 +24,7 @@ package ejercicio_herencia_ex_01;
 
 import ejercicio_herencia_ex_01.servicios.PuertoServicio;
 import ejercicio_herencia_ex_01.servicios.Servicio;
+import static ejercicio_herencia_ex_01.servicios.Servicio.leer;
 
 /**
  *
@@ -35,6 +36,15 @@ public class Ejercicio_Herencia_Ex_01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+//        String eslora;
+//        System.out.print("Ingrese el tamaño de la eslora en metros: ");
+//        eslora=leer.next();
+//        //System.out.println(eslora);
+//        //eslora=eslora.replace(",", ".");
+//        System.out.println(eslora);
+//        //float qwe=eslora;
+//        float asd=Float.parseFloat(eslora);
+//        System.out.println(asd);
         System.out.println("Este programa sirve para calcular el alquiler de barcos en un puerto.");
         Servicio.Menu(PuertoServicio.AbrirPuerto());
     }

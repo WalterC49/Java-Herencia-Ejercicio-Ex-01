@@ -24,7 +24,12 @@ public class Servicio {
         String op=leer.next();
         switch (op) {
             case "1":
-                AlquilerServicio.AgregarAlquiler(puerto);
+                if(PuertoServicio.RevisarPuerto(puerto)){
+                    System.out.println("Ya no queda lugar para amarrar en el puerto."
+                            + "\nDebería salir del programa.");
+                }else{
+                    AlquilerServicio.AgregarAlquiler(puerto);
+                }
                 Menu(puerto);
                 break;
             case "2":

@@ -25,24 +25,24 @@ public class BarcoServicio {
             op=leer.next();
             switch (op) {
                 case "1":
-                    System.out.println("Barco común:");
-                    return (T) CrearBarco();
+                    System.out.println("\nBarco común:");
+                    return CrearBarco(op);
                 case "2":
-                    System.out.println("Velero:");
-                    return (T) VeleroServicio.CrearVelero();
+                    System.out.println("\nVelero:");
+                    return CrearBarco(op);
                 case "3":
-                    System.out.println("Barco a motor:");
-                    return (T) BarcoAMotorServicio.CrearBarcoAMotor();
+                    System.out.println("\nBarco a motor:");
+                    return CrearBarco(op);
                 case "4":
-                    System.out.println("Yate de lujo:");
-                    return (T) YateDeLujoServicio.CrearYateDeLujo();
+                    System.out.println("\nYate de lujo:");
+                    return CrearBarco(op);
                 default:
                     System.out.println("Ingreso no valido.");
             }
         } while (true);        
     }
     
-    protected static Barco CrearBarco(){
+    protected static<T extends Barco> T CrearBarco(String op){
         String matricula;
         String eslora;
         int anio;
@@ -50,10 +50,19 @@ public class BarcoServicio {
         matricula=leer.next();
         System.out.print("Ingrese el tamaño de la eslora en metros: ");
         eslora=leer.next();
-        eslora=eslora.replace(".", ",");
+        eslora=eslora.replace(",", ".");
         System.out.print("Ingrese el año de fabricación: ");
         anio=leer.nextInt();
-        return new Barco(matricula,Float.parseFloat(eslora),anio);
+        switch (op) {
+            case "1":
+                return (T) new Barco(matricula, Float.parseFloat(eslora), anio);
+            case "2":
+                return (T) VeleroServicio.CrearVelero(matricula, Float.parseFloat(eslora), anio);
+            case "3":
+                return (T) BarcoAMotorServicio.CrearBarcoAMotor(matricula,Float.parseFloat(eslora),anio);
+            default:
+                return (T) YateDeLujoServicio.CrearYateDeLujo(matricula,Float.parseFloat(eslora),anio);
+        }
     }
     
 }

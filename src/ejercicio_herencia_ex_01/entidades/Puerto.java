@@ -13,12 +13,12 @@ import java.util.ArrayList;
  */
 public class Puerto {
     private ArrayList<Alquiler> Alquileres;
-    private ArrayList<Integer> PosicionesLibres;
+    private ArrayList<String> PosicionesLibres;
 
     public Puerto() {
     }
 
-    public Puerto(ArrayList<Alquiler> Alquileres, ArrayList<Integer> PosicionesLibres) {
+    public Puerto(ArrayList<Alquiler> Alquileres, ArrayList<String> PosicionesLibres) {
         this.Alquileres = Alquileres;
         this.PosicionesLibres = PosicionesLibres;
     }
@@ -31,11 +31,11 @@ public class Puerto {
         this.Alquileres = Alquileres;
     }
 
-    public ArrayList<Integer> getPosicionesLibres() {
+    public ArrayList<String> getPosicionesLibres() {
         return PosicionesLibres;
     }
 
-    public void setPosicionesLibres(ArrayList<Integer> PosicionesLibres) {
+    public void setPosicionesLibres(ArrayList<String> PosicionesLibres) {
         this.PosicionesLibres = PosicionesLibres;
     }
     

@@ -21,16 +21,16 @@ public class PuertoServicio {
         int maxBarcos;
         
         do {            
-            System.out.println("¿Cuál es la capacidad máxima de barcos que se pueden amarrar?");
+            System.out.print("¿Cuál es la capacidad máxima de barcos que se pueden amarrar? ");
             maxBarcos=leer.nextInt();
             if (maxBarcos<0) {
                 System.out.println("Ingreso no valido:");
             }
         } while (maxBarcos<0);
         
-        ArrayList<Integer> posiciones = new ArrayList();
+        ArrayList<String> posiciones = new ArrayList();
         for(int i=0;i<maxBarcos;i++){
-            posiciones.add(i);
+            posiciones.add(String.valueOf(i));
         }
         
         puerto.setPosicionesLibres(posiciones);
@@ -39,6 +39,10 @@ public class PuertoServicio {
         
         puerto.setAlquileres(alquileres);
         return puerto;
+    }
+    
+    public static boolean RevisarPuerto(Puerto puerto){
+        return puerto.getPosicionesLibres().isEmpty();
     }
     
 }

@@ -13,16 +13,14 @@ import static ejercicio_herencia_ex_01.servicios.Servicio.leer;
  * @author Walter
  */
 public class BarcoAMotorServicio extends BarcoServicio {
-    public static BarcoAMotor CrearBarcoAMotor(){
-        BarcoAMotor barMot = (BarcoAMotor) CrearBarco();
+    public static BarcoAMotor CrearBarcoAMotor(String matricula,float eslora,int anio){
         String cv;
         do {                        
             System.out.print("Ingrese su potencia en CV: ");
             cv=leer.next();
-            cv=cv.replace(".",",");
+            cv=cv.replace(",",".");
         } while (Float.parseFloat(cv)<0);
-        barMot.setCV(Float.parseFloat(cv));
-        return barMot;
+        return new BarcoAMotor(Float.parseFloat(cv), matricula, eslora, anio);
     }
     
 }

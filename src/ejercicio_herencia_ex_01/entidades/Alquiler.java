@@ -16,13 +16,13 @@ public class Alquiler {
     private Integer documentoCliente;
     private LocalDate fechaAlquiler;
     private LocalDate fechaDevolucion;
-    private Integer posicion;
+    private String posicion;
     private Barco barco;
 
     public Alquiler() {
     }
 
-    public Alquiler(String nombreCliente, Integer documentoCliente, LocalDate fechaAlquiler, LocalDate fechaDevolucion, Integer posicion, Barco barco) {
+    public Alquiler(String nombreCliente, Integer documentoCliente, LocalDate fechaAlquiler, LocalDate fechaDevolucion, String posicion, Barco barco) {
         this.nombreCliente = nombreCliente;
         this.documentoCliente = documentoCliente;
         this.fechaAlquiler = fechaAlquiler;
@@ -63,11 +63,11 @@ public class Alquiler {
         this.fechaDevolucion = fechaDevolucion;
     }
 
-    public Integer getPosicion() {
+    public String getPosicion() {
         return posicion;
     }
 
-    public void setPosicion(Integer posicion) {
+    public void setPosicion(String posicion) {
         this.posicion = posicion;
     }
 

@@ -13,8 +13,7 @@ import static ejercicio_herencia_ex_01.servicios.Servicio.leer;
  * @author Walter
  */
 public class VeleroServicio extends BarcoServicio{
-    public static Velero CrearVelero(){
-        Velero vel = (Velero) CrearBarco();
+    public static Velero CrearVelero(String matricula,float eslora,int anio){
         int cantMast;
         do {                        
             System.out.print("Ingrese la cantidad de mástiles: ");
@@ -23,7 +22,6 @@ public class VeleroServicio extends BarcoServicio{
                 System.out.println("¿Si no tiene mástiles para que puso velero?");
             }
         } while (cantMast<1);
-        vel.setCantidadMastiles(cantMast);
-        return vel;
+        return new Velero(cantMast, matricula, eslora, anio);
     }
 }
